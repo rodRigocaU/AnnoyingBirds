@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour
     private RaycastHit2D hit;
     private Vector3 movePlyr;
 
-    public Animator animator;
+    // public Animator animator;
     public float speed;
 
     //Otro video
@@ -39,8 +39,8 @@ public class Controller : MonoBehaviour
             Vector2.MoveTowards(transform.position, pointMove[randomNumber].position, speed * Time.deltaTime);
 
         //Se ven raro los cambios de Sprites
-        animator.SetFloat("Horizontal", transform.position.x);
-        animator.SetFloat("Vertical", transform.position.y);
+        // animator.SetFloat("Horizontal", transform.position.x);
+        // animator.SetFloat("Vertical", transform.position.y);
 
         //DIstancia entre el punto aleatorio y nuestro personaje es menor a la distancia minima se cambia
         if (Vector2.Distance(transform.position, pointMove[randomNumber].position) < minDistance)
@@ -55,7 +55,7 @@ public class Controller : MonoBehaviour
         if (remainingTime <= 60f && remainingTime > 0f)
         {
             float normalizedTime = remainingTime / 60f;
-            speed = Mathf.Lerp(0.2f, maxSpeed, 1f - normalizedTime);
+            speed = Mathf.Lerp(1.0f, maxSpeed, 1f - normalizedTime);
             Debug.Log("Remaining Time: " + remainingTime + ", Speed: " + speed);
         }
     }
