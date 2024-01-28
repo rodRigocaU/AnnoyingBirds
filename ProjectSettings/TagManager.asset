@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - maiz
+  - gall1
+  - gall2
+  - gall3
+  - gall4
+  - gall5
+  - gall6
+  - PROYECTIL
+  - granjero
   layers:
   - Default
   - TransparentFX

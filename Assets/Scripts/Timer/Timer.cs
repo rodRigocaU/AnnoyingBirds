@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.IO;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class Timer : MonoBehaviour
 {
@@ -22,7 +24,9 @@ public class Timer : MonoBehaviour
             if (timer <= 0)
             {
                 Debug.Log("Termino el Juego: ");
+                SceneManager.LoadScene(1);
                 PauseGame();
+
             }
         }
     }

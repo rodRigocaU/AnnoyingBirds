@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -32,6 +34,7 @@ public class ChickenCom : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
+            Debug.Log("Hola ");
             if (eventData.pointerDrag.tag.Equals("maiz"))
             {
                 //Debug.Log("Entre 3");
@@ -130,6 +133,10 @@ public class ChickenCom : MonoBehaviour, IDropHandler
         }
     }
 
+    public int huevosContGe()
+    {
+        return eggs;
+    }
 
     public void LanzarProyectil()
     {
@@ -174,6 +181,27 @@ public class ChickenCom : MonoBehaviour, IDropHandler
         }
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("granjero"))
+        {
+            if(eggs > 0)
+            {
+                eggs -= 1;
+                ContarHuevos();
+            }
+                
+            //Debug.Log("Funca");
+        }
+        else
+        {
+            //Debug.Log("Funca2");
+        }
+      
+    }
+
+
 
 }
 

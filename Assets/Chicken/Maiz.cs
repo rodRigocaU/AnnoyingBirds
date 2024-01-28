@@ -6,4 +6,5 @@ public class Maiz : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool estaEnZonaGallina = false;
+
 }
